@@ -43,11 +43,13 @@
                 Inicio
               </a>
             </li>
+            
             <li>
-              <a href="#login" class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+              <a href="{{ route ('login') }}" class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
                 Login
               </a>
             </li>
+            
           </ul>
         </nav>
 
@@ -210,7 +212,7 @@
       </div>
     </section>
 
-    <!-- LOGIN -->
+    <!-- LOGIN 
     <section id="login" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
       <div class="grid gap-6 lg:grid-cols-2 lg:items-center">
         <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
@@ -266,6 +268,7 @@
       </div>
     </section>
   </main>
+  -->
 
   <!-- FOOTER -->
   <footer class="border-t border-slate-200 bg-white">

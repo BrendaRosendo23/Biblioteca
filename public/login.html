@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso | Biblioteca</title>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente opcional -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  </style>
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-900">
+  <!-- Contenedor -->
+  <main class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+    <header class="mb-8 text-center">
+      <h1 class="text-3xl font-bold">Biblioteca</h1>
+      <p class="mt-2 text-slate-600">Inicia sesión o crea una cuenta.</p>
+    </header>
+
+    <!-- Grid responsive: 1 columna en móvil, 2 en desktop -->
+    <section class="grid gap-6 lg:grid-cols-2">
+      <!-- ================= LOGIN ================= -->
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+        <header class="mb-6">
+          <h2 class="text-2xl font-bold">Iniciar sesión</h2>
+          <p class="mt-1 text-sm text-slate-600">Accede con tu correo y contraseña.</p>
+        </header>
+
+        <form action="#" method="POST" class="space-y-4">
+          <!-- Email -->
+          <div class="space-y-1">
+            <label for="login_email" class="text-sm font-semibold text-slate-800">Email</label>
+            <input
+              id="login_email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="tu@correo.com"
+              class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400
+                     focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="space-y-1">
+            <label for="login_password" class="text-sm font-semibold text-slate-800">Password</label>
+            <input
+              id="login_password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              placeholder="••••••••"
+              class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400
+                     focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            />
+          </div>
+
+          <!-- Botón -->
+          <button
+            type="submit"
+            class="w-full rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700
+                   focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          >
+            Entrar
+          </button>
+
+          <p class="text-center text-xs text-slate-500">
+            ¿No tienes cuenta? Regístrate en el formulario de la derecha.
+          </p>
+        </form>
+      </article>
+
+      <!-- ================= REGISTRO ================= -->
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+        <header class="mb-6">
+          <h2 class="text-2xl font-bold">Registro</h2>
+          <p class="mt-1 text-sm text-slate-600">Crea tu cuenta para reservar y gestionar préstamos.</p>
+        </header>
+
+        <form action="#" method="POST" class="space-y-4">
+          <!-- Nombre / Apellido -->
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="space-y-1">
+              <label for="reg_nombre" class="text-sm font-semibold text-slate-800">Nombre</label>
+              <input
+                id="reg_nombre"
+                name="nombre"
+                type="text"
+                autocomplete="given-name"
+                required
+                placeholder="Tu nombre"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label for="reg_apellido" class="text-sm font-semibold text-slate-800">Apellido</label>
+              <input
+                id="reg_apellido"
+                name="apellido"
+                type="text"
+                autocomplete="family-name"
+                required
+                placeholder="Tu apellido"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="space-y-1">
+            <label for="reg_email" class="text-sm font-semibold text-slate-800">Email</label>
+            <input
+              id="reg_email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="tu@correo.com"
+              class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400
+                     focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            />
+          </div>
+
+          <!-- Password / Repetir Password -->
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="space-y-1">
+              <label for="reg_password" class="text-sm font-semibold text-slate-800">Password</label>
+              <input
+                id="reg_password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                required
+                placeholder="••••••••"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label for="reg_password2" class="text-sm font-semibold text-slate-800">Repetir password</label>
+              <input
+                id="reg_password2"
+                name="password_confirmation"
+                type="password"
+                autocomplete="new-password"
+                required
+                placeholder="••••••••"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+          </div>
+
+          <!-- Botón -->
+          <button
+            type="submit"
+            class="w-full rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800
+                   focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+          >
+            Crear cuenta
+          </button>
+
+          <p class="text-center text-xs text-slate-500">
+            Al registrarte aceptas los términos y el aviso de privacidad.
+          </p>
+        </form>
+      </article>
+    </section>
+
+    <footer class="mt-10 text-center text-xs text-slate-500">
+      © <span id="year"></span> Biblioteca. Todos los derechos reservados.
+    </footer>
+  </main>
+
+  <script>
+    // Solo para el año (si no quieres nada de JS, puedes borrar este script y poner el año fijo)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

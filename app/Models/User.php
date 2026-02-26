@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_type', // Asegúrate de agregar este campo a fillable para permitir su asignación masiva
     ];
 
     /**
