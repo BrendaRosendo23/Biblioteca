@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\LibrosController;
+use App\Http\Controllers\UsuariosController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,7 +24,10 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::middleware('auth')->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    
+});
 
+Route::middleware(['auth', 'user_type:admin'])->group(function() {
     Route::get('/categorias', [CategoriasController::class, 'index'])->name('categorias.index');
     Route::get('/categorias/create', [CategoriasController::class, 'create'])->name('categorias.create');
     Route::post('/categorias/store', [CategoriasController::class, 'store'])->name('categorias.store');
@@ -37,6 +41,13 @@ Route::middleware('auth')->group(function(){
     Route::get('/libros/{id}/edit', [LibrosController::class, 'edit'])->name('libros.edit');
     Route::put('/libros/{id}', [LibrosController::class, 'update'])->name('libros.update');
     Route::delete('/libros/{id}', [LibrosController::class, 'destroy'])->name('libros.destroy');
-});
 
+    Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios.index');
+    Route::get('/usuarios/create', [UsuariosController::class, 'create'])->name('usuarios.create');
+    Route::post('/usuarios/store', [UsuariosController::class, 'store'])->name('usuarios.store');
+    Route::get('/usuarios/{id}/edit', [UsuariosController::class, 'edit'])->name('usuarios.edit');
+    Route::put('/usuarios/{id}', [UsuariosController::class, 'update'])->name('usuarios.update');
+    Route::delete('/usuarios/{id}', [UsuariosController::class, 'destroy'])->name('usuarios.destroy');
+    
+});
 
