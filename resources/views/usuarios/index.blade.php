@@ -47,22 +47,12 @@
                                 >
                                     Editar
                                 </a>
-
-                                <form
-                                    action="{{ route('usuarios.destroy', $usuario->id) }}"
-                                    method="POST"
-                                    class="inline-block"
-                                    onsubmit="return confirm('¿Estás seguro de eliminar este usuario?');"
+                                <a
+                                    href="{{ route('usuarios.delete_confirm', $usuario->id) }}"
+                                    class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
                                 >
-                                    @csrf
-                                    @method('DELETE')
-                                    <button
-                                        type="submit"
-                                        class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
-                                    >
-                                        Eliminar
-                                    </button>
-                                </form>
+                                    Eliminar
+                                </a>
                             </td>
                         </tr>
                     @empty

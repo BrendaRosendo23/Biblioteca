@@ -24,12 +24,15 @@ class UsuariosController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'password_confirmation' => 'required|string|min:8',
+            'user_type' => 'required|string|in:user,admin',
         ]);
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+        $user->user_type = $request->user_type;
         $user->save();
 
         return redirect()->route('usuarios.index')->with('success', 'Usuario creado exitosamente.');
@@ -46,18 +49,22 @@ class UsuariosController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$id,
-            'password' => 'nullable|string|min:8|confirmed',
+            'user_type' => 'required|string|in:user,admin',
         ]);
 
         $usuario = User::findOrFail($id);
         $usuario->name = $request->name;
         $usuario->email = $request->email;
-        if ($request->password) {
-            $usuario->password = bcrypt($request->password);
-        }
+        $usuario->user_type = $request->user_type;
         $usuario->save();
 
         return redirect()->route('usuarios.index')->with('success', 'Usuario actualizado exitosamente.');
+    }
+
+    public function delete_confirm($id)
+    {
+        $usuario = User::findOrFail($id);
+        return view('usuarios.delete_confirm', compact('usuario'));
     }
 
     public function destroy($id)
