@@ -29,7 +29,8 @@
     {{-- Sidebar --}}
     <aside
       id="sidebar"
-      class="fixed inset-y-0 left-0 z-40 w-72 -translate-x-full bg-white shadow-lg transition-transform duration-200 lg:static lg:translate-x-0 lg:shadow-none border-r border-slate-200"
+      class="fixed inset-y-0 left-0 z-40 w-72 -translate-x-full bg-white shadow-lg transition-transform duration-200 lg:static lg:translate-x-0 
+      lg:shadow-none border-r border-slate-200"
       aria-label="Barra lateral"
     >
       <div class="flex h-16 items-center justify-between px-4 border-b border-slate-200">
@@ -59,8 +60,6 @@
               <span class="font-medium">Inicio</span>
             </a>
           </li>
-
-          
 
           <li>
             <a href="" class="flex items-center gap-3 rounded-xl px-3 py-2 text-slate-700 hover:bg-slate-100">

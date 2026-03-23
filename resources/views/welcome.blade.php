@@ -38,11 +38,7 @@
         <!-- Menú escritorio -->
         <nav class="hidden md:block" aria-label="Navegación principal">
           <ul class="flex items-center gap-2">
-            <li>
-              <a href="#inicio" class="rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100">
-                Inicio
-              </a>
-            </li>
+            
             
             <li>
               <a href="{{ route ('login') }}" class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
@@ -72,13 +68,9 @@
     <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
       <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3" aria-label="Navegación móvil">
         <ul class="flex flex-col gap-2">
+          
           <li>
-            <a href="#inicio" class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100">
-              Inicio
-            </a>
-          </li>
-          <li>
-            <a href="#login" class="block rounded-xl bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+            <a href="{{ route('login') }}" class="block rounded-xl bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
               Login
             </a>
           </li>
@@ -109,7 +101,7 @@
             </p>
 
             <div class="mt-6 flex flex-col sm:flex-row gap-3">
-              <a href="#login" class="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700">
+              <a href="{{ route('login') }}" class="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700">
                 Iniciar sesión
               </a>
               <a href="#catalogo" class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold hover:bg-slate-50">

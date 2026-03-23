@@ -79,7 +79,7 @@
           </li>
 
           <li>
-            <a href="" class="flex items-center gap-3 rounded-xl px-3 py-2 text-slate-700 hover:bg-slate-100">
+            <a href="{{ route('prestamos.index') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-slate-700 hover:bg-slate-100">
               <span class="font-medium">Préstamos</span>
             </a>
           </li>

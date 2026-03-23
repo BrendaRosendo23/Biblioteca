@@ -181,7 +181,11 @@
                 </div>
               </td>
               <td class="px-4 py-3">
-                <span class="rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700">Sí</span>
+                @if($libro->estatus == '0')
+                  <span class="rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700">Sí</span>
+                @else
+                <span class="rounded-full bg-rose-50 px-2 py-1 text-xs font-semibold text-rose-700">No</span>
+                @endif
               </td>
               <td class="px-4 py-3">
                 <a href="{{ route('libros.edit', $libro->id) }}" class="rounded-lg px-3 py-1 text-xs font-semibold hover:bg-slate-100">Editar</a>

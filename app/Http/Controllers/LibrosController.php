@@ -23,7 +23,7 @@ class LibrosController extends Controller
             'isbn'=> 'required|string|max:20|unique:libros,isbn',
             'autor' => 'required|string|max:255',
             'editorial' => 'required|string|max:255',
-            'categoria' => 'required|exists:categorias,id',
+            'categoria_id' => 'required|exists:categorias,id',
         ]);
 
         // Crear un nuevo libro con los datos validados
@@ -32,7 +32,7 @@ class LibrosController extends Controller
         $libro->isbn = $validatedData['isbn'];
         $libro->autor = $validatedData['autor'];
         $libro->editorial = $validatedData['editorial'];
-        $libro->categoria_id = $validatedData['categoria'];
+        $libro->categoria_id = $validatedData['categoria_id'];
         $libro->save();
 
         // Redirigir a la lista de libros o mostrar un mensaje de éxito
@@ -54,7 +54,7 @@ class LibrosController extends Controller
             'isbn'=> 'required|string|max:20|unique:libros,isbn,' . $id,
             'autor' => 'required|string|max:255',
             'editorial' => 'required|string|max:255',
-            'categoria' => 'required|exists:categorias,id',
+            'categoria_id' => 'required|exists:categorias,id',
         ]);
         // Encontrar el libro existente y actualizar sus datos
         $libro = Libro::findOrFail($id);
@@ -62,7 +62,7 @@ class LibrosController extends Controller
         $libro->isbn = $validatedData['isbn'];
         $libro->autor = $validatedData['autor'];
         $libro->editorial = $validatedData['editorial'];
-        $libro->categoria_id = $validatedData['categoria'];
+        $libro->categoria_id = $validatedData['categoria_id'];
         $libro->save();
         // Redirigir a la lista de libros o mostrar un mensaje de éxito
         return redirect()->route('home')->with('success', 'Libro actualizado exitosamente.');

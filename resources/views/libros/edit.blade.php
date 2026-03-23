@@ -36,12 +36,12 @@
         </div>
 
         <div>
-            <label for="categoria" class="block text-sm font-medium text-gray-700">Categoría</label>
-            <select name="categoria" id="categoria_id" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 
+            <label for="categoria_id" class="block text-sm font-medium text-gray-700">Categoría</label>
+            <select name="categoria_id" id="categoria_id" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 
             focus:ring-indigo-500 sm:text-sm">
                 <option value="">Seleccione una categoría</option>
                 @foreach($categorias as $categoria)
-                    <option value="{{ $categoria->id }}" {{ $libro->categoria_id == $categoria->id ? 'selected' : '' }}>{{ $categoria->nombre }}</option>
+                    <option value="{{ $categoria->id }}" {{ old('categoria_id', $libro->categoria_id) == $categoria->id ? 'selected' : '' }}>{{ $categoria->nombre }}</option>
                 @endforeach
             </select>
         </div>
