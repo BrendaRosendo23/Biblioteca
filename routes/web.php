@@ -26,7 +26,9 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::middleware('auth')->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-    
+    Route::get('usuarios/profile', [UsuariosController::class, 'profile'])->name('usuarios.profile');
+    Route::put('usuarios/profile/update', [UsuariosController::class, 'update_profile'])->name('usuarios.update_profile');
+    Route::put('usuarios/profile/update_password', [UsuariosController::class, 'update_password'])->name('usuarios.update_password');
 });
 
 Route::middleware(['auth', 'user_type:admin'])->group(function() {

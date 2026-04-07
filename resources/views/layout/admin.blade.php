@@ -73,7 +73,7 @@
           </li>
 
           <li>
-            <a href="" class="flex items-center gap-3 rounded-xl px-3 py-2 text-slate-700 hover:bg-slate-100">
+            <a href="{{ route('libros.create') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-slate-700 hover:bg-slate-100">
               <span class="font-medium">Libros</span>
             </a>
           </li>
@@ -127,13 +127,13 @@
               </div>
             </div>
 
-            <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2">
               <div class="hidden sm:flex items-center gap-2 rounded-2xl bg-slate-100 px-3 py-2">
                 <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-white text-sm font-semibold">
                   {{ strtoupper(substr(Auth::user()->name ?? 'AD', 0, 2)) }}
                 </span>
                 <div class="leading-tight">
-                  <p class="text-sm font-semibold">{{ Auth::user()->name ?? 'Admin' }}</p>
+                  <p class="text-sm font-semibold"><a href="{{ route('usuarios.profile') }}" class="hover:underline">{{ Auth::user()->name ?? 'Admin' }}</a></p>
                   <p class="text-xs text-slate-600">{{ Auth::user()->email ?? 'admin@biblioteca' }}</p>
                 </div>
               </div>

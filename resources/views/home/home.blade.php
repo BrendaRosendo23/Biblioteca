@@ -13,38 +13,38 @@
         <p class="text-sm text-slate-600">Vista general de actividad y accesos rápidos.</p>
       </div>
       <div class="flex gap-2">
-        <button class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+        <a href="{{ route('prestamos.create') }}" class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
           + Nuevo préstamo
-        </button>
-        <button class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold hover:bg-slate-50">
+        </a>
+        <a href="{{ route('libros.create') }}" class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold hover:bg-slate-50">
           + Nuevo libro
-        </button>
+        </a>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <article class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
         <p class="text-sm text-slate-600">Usuarios</p>
-        <p class="mt-2 text-2xl font-bold">1,245</p>
+        <p class="mt-2 text-2xl font-bold">{{ $total_usuarios }}</p>
         <p class="mt-1 text-xs text-slate-500">Activos este mes</p>
       </article>
 
       <article class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
         <p class="text-sm text-slate-600">Libros</p>
-        <p class="mt-2 text-2xl font-bold">8,920</p>
+        <p class="mt-2 text-2xl font-bold">{{ $total_Libros }}</p>
         <p class="mt-1 text-xs text-slate-500">En catálogo</p>
       </article>
 
       <article class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
         <p class="text-sm text-slate-600">Préstamos</p>
-        <p class="mt-2 text-2xl font-bold">312</p>
+        <p class="mt-2 text-2xl font-bold">{{ $libros_prestados }}</p>
         <p class="mt-1 text-xs text-slate-500">En curso</p>
       </article>
 
       <article class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <p class="text-sm text-slate-600">Atrasos</p>
-        <p class="mt-2 text-2xl font-bold">27</p>
-        <p class="mt-1 text-xs text-slate-500">Requieren seguimiento</p>
+        <p class="text-sm text-slate-600">Devoluciones pendientes</p>
+        <p class="mt-2 text-2xl font-bold">{{ $devoluciones_pendientes }}</p>
+        <p class="mt-1 text-xs text-slate-500">Activas</p>
       </article>
     </div>
   </section>
@@ -56,9 +56,9 @@
         <h2 class="text-xl font-bold">Usuarios</h2>
         <p class="text-sm text-slate-600">Gestión de lectores y administradores.</p>
       </div>
-      <button class="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
+      <a href="{{ route('usuarios.create') }}" class="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
         + Agregar usuario
-      </button>
+      </a>
     </header>
 
     <div class="rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -220,9 +220,9 @@
         <h2 class="text-xl font-bold">Préstamos</h2>
         <p class="text-sm text-slate-600">Registro y seguimiento de préstamos.</p>
       </div>
-      <button class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+      <a href="{{ route('prestamos.create') }}" class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
         + Registrar préstamo
-      </button>
+      </a>
     </header>
 
     <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
