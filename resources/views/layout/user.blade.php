@@ -116,7 +116,7 @@
                   {{ strtoupper(substr(Auth::user()->name ?? 'AD', 0, 2)) }}
                 </span>
                 <div class="leading-tight">
-                  <p class="text-sm font-semibold">{{ Auth::user()->name ?? 'Admin' }}</p>
+                  <p class="text-sm font-semibold"><a href="{{ route('usuarios.profile') }}" class="hover:underline">{{ Auth::user()->name ?? 'Admin' }}</a></p>
                   <p class="text-xs text-slate-600">{{ Auth::user()->email ?? 'admin@biblioteca' }}</p>
                 </div>
               </div>
